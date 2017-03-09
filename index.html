@@ -1,0 +1,190 @@
+<html>
+	<head>
+		<title>Machine Problem 5</title>
+	</head>
+<body>
+
+<img id='image' src="1.jpg" style="background-size: 100% 100%;">
+<br>
+<input type="button" value="Answer me" onclick="answerme();">
+<script type='text/javascript'>
+
+var scene = 1;
+var number = 0;
+var correct = 0;
+var wrong = 0;
+
+function answerme(){
+
+	var flag = true;
+
+	while (flag){
+
+	var answer = prompt("Enter your answer");
+		if (!isNaN(answer)){
+			answer = "isanumber";
+		}
+
+
+	switch(scene){
+		case 1: 	
+			switch(answer){ 
+				case "angel": alert("You're fine as an individual");
+				document.getElementById("image").src="2.jpg";
+				scene = scene + 1;
+				flag = false;
+				correct = correct + 1;
+				break;
+
+				case "isanumber":
+				if (number >= 3){
+					document.documentElement.innerHTML = '';
+					document.write("<h5>Calling 911!</h5>");
+					flag = false;
+				}else{
+					number = number + 1;
+					flag = true;
+				}
+				break;
+
+				case null:
+				flag = false;
+				break;
+
+				default: alert("You should be in an asylum");
+					flag = false;
+					scene = scene + 1;
+					wrong = wrong + 1;
+					document.getElementById("image").src="2.jpg";
+				break;
+			}
+		break;
+
+		case 2:
+			switch(answer){ 
+					case "heart":
+					case "organ": 
+					case "love": alert("You're fine as an individual");
+					document.getElementById("image").src="3.jpg";
+					scene = scene + 1;
+					flag = false;
+					correct = correct + 1;
+					break;
+
+					case "isanumber":
+					if (number >= 3){
+						document.documentElement.innerHTML = '';
+						document.write("<h5>Calling 911!</h5>");
+						flag = false;
+					}else{
+						number = number + 1;
+						flag = true;
+					}
+					break;
+
+					case "null":
+					flag = false;
+					break;
+
+					default: alert("You should be in an asylum");
+					flag = false;
+					scene = scene + 1;
+					wrong = wrong + 1;
+					document.getElementById("image").src="3.jpg";
+					break;
+			}
+		break;
+
+		case 3:
+			switch(answer){ 
+					case "face": 
+					case "man": 
+					case "jesus": alert("You're fine as an individual");
+					document.getElementById("image").src="4.jpg";
+					scene = scene + 1;
+					flag = false;
+					correct = correct + 1;
+					break;
+
+					case "isanumber":
+					if (number >= 3){
+						document.documentElement.innerHTML = '';
+						document.write("<h5>Calling 911!</h5>");
+						flag = false;
+					}else{
+						number = number + 1;
+						flag = true;
+					}
+					break;
+
+					case "null":
+					flag = false;
+					break;
+
+					default: alert("You should be in an asylum");
+					flag = false;
+					scene = scene + 1;
+					wrong = wrong + 1;
+					document.getElementById("image").src="4.jpg";
+					break;
+			}
+		break;
+
+		case 4:
+			switch(answer){
+					case "moth": 
+					case "insect": 
+					case "butterfly": alert("You're fine as an individual");
+					scene = scene + 1;
+					flag = false;
+					correct = correct + 1;
+					break;
+
+					case "isanumber":
+					if (number >= 3){
+						document.documentElement.innerHTML = '';
+						document.write("<h5>Calling 911!</h5>");
+						flag = false;
+					}else{
+						number = number + 1;
+						flag = true;
+					}
+					break;
+
+					case "null":
+					flag = false;
+					break;
+
+					default: alert("You should be in an asylum");
+					flag = false;
+					scene = scene + 1;
+					wrong = wrong + 1;
+					break;
+			}
+
+		case 5:
+			var message;
+			switch (wrong){
+				case 0:
+				case 1:
+				case 2: message = "Good news! Your sanity is still intact";
+				break;
+
+				case 3:
+				case 4: message =  "You should probably distance yourself from people and seriously rethink your decisions in life";
+				break;
+			}
+			document.documentElement.innerHTML = '';
+			document.write("<h3>Correct: " + correct + "<br>Wrong: " + wrong + "<br>" + message + "</h3>");
+			flag = false;
+		break;
+	}
+
+	}
+}
+
+
+</script>
+
+</body>
+</html>
